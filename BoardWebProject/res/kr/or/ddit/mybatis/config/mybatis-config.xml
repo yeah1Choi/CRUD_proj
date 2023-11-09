@@ -17,7 +17,7 @@
 	<!-- 전체 이름을 사용하면 클래스이름이 길어지는데 그것을 짧게 사용하기위한 별칭 설정 -->
 	  
 	<typeAliases>
-<!-- 		<typeAlias type="클래스의 전체 경로" alias="별칭"/> -->
+		<typeAlias type="kr.or.ddit.vo.Board" alias="boardVO"/>
 	</typeAliases>
 	
 	
@@ -43,6 +43,6 @@
 		</mappers>
 	 -->
 	 <mappers>
-<!-- 	 	<mapper resource="kr/or/ddit/mybatis/mappers/board-mapper.xml"/> -->
+ 	 	<mapper resource="kr/or/ddit/mybatis/mappers/board-mapper.xml"/>
 	 </mappers>
 </configuration>	

@@ -4,7 +4,37 @@
 	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace=""></mapper>	
+<mapper namespace="board">
+	<select id="selectList" resultType="boardVO">
+		select * from board
+	</select>
+	
+	<select id="selectOne" resultType="boardVO" parameterType="int">
+		select * from board where bo_no = #{bo_no}
+	</select>
+	
+	<insert id="addBoard" parameterType="boardVO">
+		insert into board values(
+			seq_board.nextval, 
+			#{bo_title},
+			#{bo_content},
+			#{bo_writer},
+			sysdate,
+			0)
+	</insert>
+	
+	<update id="updateBoard" parameterType="boardVO">
+		update board set
+			bo_title = #{bo_title},
+			bo_content = #{bo_content},
+			bo_writer = #{bo_writer},
+			bo_date = sysdate
+	</update>
+	
+	<delete id="deleteBoard" parameterType="int">
+		delete from board where bo_no = #{bo_no} 
+	</delete>
+</mapper>	
 
 
 

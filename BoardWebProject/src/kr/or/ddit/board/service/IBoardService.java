@@ -1,11 +1,11 @@
-package kr.or.ddit.board.dao;
+package kr.or.ddit.board.service;
 
 import java.util.List;
 
 import kr.or.ddit.vo.Board;
 
-public interface IBoardDAO {
-	
+public interface IBoardService {
+
 	public List<Board> selectList();
 	
 	public Board selectOne(int bo_no);
@@ -15,4 +15,5 @@ public interface IBoardDAO {
 	public int updateBoard(Board board);
 	
 	public int deleteBoard(int bo_no);
+	
 }
