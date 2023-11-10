@@ -46,7 +46,6 @@ public class Board implements Comparable<Board> {
 		this.bo_hit = bo_hit;
 	}
 	
-	
 	@Override
 	public int compareTo(Board board) {
 		if (board.bo_no < bo_no) {

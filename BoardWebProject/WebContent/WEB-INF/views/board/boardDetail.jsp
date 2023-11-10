@@ -10,23 +10,22 @@
 <script type="text/javascript">
 function goUpdate(){
 	var form = document.getElementById("frm");
-	form.method = "GET";
-	form.action = "<%=request.getContextPath()%>/boardUpdate.do"
+	form.action = "<%=request.getContextPath()%>/board/boardUpdate.do"
 	form.submit();
 }
 function goDelete(){
-	var flagDel = conform("정말로 삭제하시겠습니까? 삭제한 데이터는 되돌릴 수 없습니다.");
+	var flagDel = confirm("정말로 삭제하시겠습니까? 삭제한 데이터는 되돌릴 수 없습니다.");
 	
 	if(!flagDel){
 		return;
 	}
 	
 	var form = document.getElementById("frm");
-	form.action = "<%=request.getContextPath()%>/boardDelete.do"
+	form.action = "<%=request.getContextPath()%>/board/boardDelete.do"
 	form.submit();
 }
 function goList(){
-	location.href = "<%=request.getContextPath()%>/boardList.do"
+	location.href = "<%=request.getContextPath()%>/board/boardList.do"
 }
 </script>
 </head>

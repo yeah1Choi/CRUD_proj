@@ -142,5 +142,29 @@ public class BoardDAOImpl implements IBoardDAO {
 		
 		return cnt;
 	}
+	
+	@Override
+	public int updateHit(int bo_no) {
+		SqlSession session = null;
+		int cnt = 0;
+		
+		try {
+			session = MybatisUtil.getSqlSession();
+			cnt = session.update("board.updateHit", bo_no);
+			
+			if (cnt > 0) {
+				System.out.println("데이터가 성공적으로 수정되었습니다.");
+				session.commit();
+			} else {
+				System.out.println("데이터 수정를 실패했습니다.");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if(session!=null) session.close();
+		}
+		
+		return cnt;
+	}
 
 }

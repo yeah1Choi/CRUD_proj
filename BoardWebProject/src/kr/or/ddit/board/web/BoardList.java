@@ -13,7 +13,7 @@ import kr.or.ddit.board.service.BoardServiceImpl;
 import kr.or.ddit.board.service.IBoardService;
 import kr.or.ddit.vo.Board;
 
-@WebServlet("/boardList.do")
+@WebServlet("/board/boardList.do")
 public class BoardList extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -24,7 +24,7 @@ public class BoardList extends HttpServlet {
 		
 		request.setAttribute("boardList", boardList);
 		
-		request.getRequestDispatcher("/WEB-INF/view/board/boardList.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/views/board/boardList.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

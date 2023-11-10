@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<a href="<%=request.getContextPath()%>/boardList.do">게시판으로 가기</a>
+<a href="<%=request.getContextPath()%>/board/boardList.do">게시판으로 가기</a>
 </body>
 </html>

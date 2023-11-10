@@ -40,7 +40,7 @@ function goAdd(){
 			for(Board board : list){
 	%>
 	<tr>
-		<td><a href="<%=request.getContextPath()%>/boardDetail.do?bo_no=<%=board.getBo_no()%>"><%=board.getBo_no()%></a></td>
+		<td><a href="<%=request.getContextPath()%>/board/boardDetail.do?bo_no=<%=board.getBo_no()%>"><%=board.getBo_no()%></a></td>
 		<td><%=board.getBo_title()%></td>
 		<td><%=board.getBo_writer()%></td>
 		<td><%=board.getBo_date()%></td>

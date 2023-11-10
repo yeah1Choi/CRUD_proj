@@ -23,12 +23,19 @@
 			0)
 	</insert>
 	
+	<update id="updateHit" parameterType="int">
+		update board set
+			bo_hit = bo_hit + 1
+		where bo_no = #{bo_no}
+	</update>
+	
 	<update id="updateBoard" parameterType="boardVO">
 		update board set
 			bo_title = #{bo_title},
 			bo_content = #{bo_content},
 			bo_writer = #{bo_writer},
 			bo_date = sysdate
+		where bo_no = #{bo_no}
 	</update>
 	
 	<delete id="deleteBoard" parameterType="int">

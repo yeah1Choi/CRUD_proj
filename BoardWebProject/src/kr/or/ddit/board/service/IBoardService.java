@@ -15,5 +15,6 @@ public interface IBoardService {
 	public int updateBoard(Board board);
 	
 	public int deleteBoard(int bo_no);
-	
+
+	public int updateHit(int bo_no);
 }

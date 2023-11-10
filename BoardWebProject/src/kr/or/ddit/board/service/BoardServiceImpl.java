@@ -18,6 +18,11 @@ public class BoardServiceImpl implements IBoardService {
 		if(service == null) service = new BoardServiceImpl();
 		return service;
 	}
+	
+	@Override
+	public int updateHit(int bo_no) {
+		return dao.updateHit(bo_no);
+	}
 
 	@Override
 	public List<Board> selectList() {
@@ -26,6 +31,7 @@ public class BoardServiceImpl implements IBoardService {
 
 	@Override
 	public Board selectOne(int bo_no) {
+		dao.updateHit(bo_no);
 		return dao.selectOne(bo_no);
 	}
 
@@ -43,5 +49,4 @@ public class BoardServiceImpl implements IBoardService {
 	public int deleteBoard(int bo_no) {
 		return dao.deleteBoard(bo_no);
 	}
-
 }
