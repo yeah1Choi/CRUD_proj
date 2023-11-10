@@ -7,6 +7,11 @@
 <head>
 <meta charset="UTF-8">
 <title>게시판</title>
+<script type="text/javascript">
+function goAdd(){
+	location.href = "<%=request.getContextPath()%>/board/boardAdd.do";
+}
+</script>
 </head>
 <body>
 <%
@@ -35,7 +40,7 @@
 			for(Board board : list){
 	%>
 	<tr>
-		<td><a href="<%=request.getContextPath()%>/board/boardDetail.jsp?bo_no="<%=board.getBo_no()%>><%=board.getBo_no()%></a></td>
+		<td><a href="<%=request.getContextPath()%>/boardDetail.do?bo_no=<%=board.getBo_no()%>"><%=board.getBo_no()%></a></td>
 		<td><%=board.getBo_title()%></td>
 		<td><%=board.getBo_writer()%></td>
 		<td><%=board.getBo_date()%></td>
@@ -45,6 +50,9 @@
 			}		
 		}
 	%>
+	<tr>
+		<td colspan="5"> <input type="button" value="등록" onclick="goAdd()"> </td>
+	</tr>
 </table>
 </body>
 </html>

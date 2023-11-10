@@ -1,8 +1,6 @@
 package kr.or.ddit.board.web;
 
 import java.io.IOException;
-import java.util.List;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,18 +11,22 @@ import kr.or.ddit.board.service.BoardServiceImpl;
 import kr.or.ddit.board.service.IBoardService;
 import kr.or.ddit.vo.Board;
 
-@WebServlet("/boardList.do")
-public class BoardList extends HttpServlet {
+@WebServlet("/boardDetail.do")
+public class BoardDetail extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
+		
+		int bo_no = Integer.parseInt(request.getParameter("bo_no"));
+		
 		IBoardService service = BoardServiceImpl.getInstance();
 		
-		List<Board> boardList = service.selectList();
+		Board board = service.selectOne(bo_no);
 		
-		request.setAttribute("boardList", boardList);
+		request.setAttribute("board", board);
 		
-		request.getRequestDispatcher("/WEB-INF/view/board/boardList.jsp").forward(request, response);
+		request.getRequestDispatcher("boardDetail.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
