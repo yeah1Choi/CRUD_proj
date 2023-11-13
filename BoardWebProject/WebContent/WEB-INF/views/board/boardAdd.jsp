@@ -6,6 +6,11 @@
 <head>
 <meta charset="UTF-8">
 <title>게시물 등록하기</title>
+<style type="text/css">
+	td, th {
+		padding: 10px;
+	}
+</style>
 <script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery-3.7.1.min.js"></script>
 <script type="text/javascript">
 function goList(){
@@ -15,7 +20,7 @@ function goList(){
 </head>
 <body>
 <h1>게시물 등록</h1>
-<hr>
+<hr><br>
 <form action="<%=request.getContextPath()%>/board/boardAdd.do" method="post">
 	<table border="1">
 		<tr>

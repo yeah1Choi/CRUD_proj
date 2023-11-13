@@ -6,6 +6,11 @@
 <head>
 <meta charset="UTF-8">
 <title>게시물 상세보기</title>
+<style type="text/css">
+	td, th {
+		padding: 10px;
+	}
+</style>
 <script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery-3.7.1.min.js"></script>
 <script type="text/javascript">
 function goUpdate(){
@@ -34,7 +39,7 @@ function goList(){
 	Board board = (Board)request.getAttribute("board");
 %>
 <h1>게시물 상세보기</h1>
-<hr>
+<hr> <br>
 <form name="frm" id="frm">
 	<input type="hidden" name="bo_no" value="<%=board.getBo_no()%>">
 	<table border="1">

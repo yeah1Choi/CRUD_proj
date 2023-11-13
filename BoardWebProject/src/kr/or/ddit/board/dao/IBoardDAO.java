@@ -17,4 +17,6 @@ public interface IBoardDAO {
 	public int deleteBoard(int bo_no);
 	
 	public int updateHit(int bo_no);
+	
+	public List<Board> selectSearch(Board board);
 }

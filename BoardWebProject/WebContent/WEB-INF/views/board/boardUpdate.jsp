@@ -6,13 +6,18 @@
 <head>
 <meta charset="UTF-8">
 <title>게시물 수정하기</title>
+<style type="text/css">
+	td, th {
+		padding: 10px;
+	}
+</style>
 </head>
 <body>
 <%
 	Board board = (Board)request.getAttribute("board");
 %>
 <h1>게시물 수정</h1>
-<hr>
+<hr><br>
 <form action="<%=request.getContextPath()%>/board/boardUpdate.do" method="post">
 	<input type="hidden" name="bo_no" value="<%=board.getBo_no()%>">
 	<table border="1">

@@ -13,6 +13,16 @@
 		select * from board where bo_no = #{bo_no}
 	</select>
 	
+	<select id="selectSearch" resultType="boardVO" parameterType="boardVO">
+		select * from board where
+  		case
+    	when #{searchKey} = 'bo_title' and bo_title like '%' || #{searchResult} || '%' then 1
+    	when #{searchKey} = 'bo_writer' and bo_writer like '%' || #{searchResult} || '%' then 1
+    	when #{searchKey} = 'bo_date' and bo_date like '%' || #{searchResult} || '%' then 1
+    	else 0
+  		end = 1
+	</select>
+	
 	<insert id="addBoard" parameterType="boardVO">
 		insert into board values(
 			seq_board.nextval, 

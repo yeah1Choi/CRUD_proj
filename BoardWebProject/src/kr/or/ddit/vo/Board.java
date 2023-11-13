@@ -9,6 +9,9 @@ public class Board implements Comparable<Board> {
 	private String bo_date;
 	private int bo_hit = 0;
 	
+	private String searchKey;
+	private String searchResult;
+	
 	public int getBo_no() {
 		return bo_no;
 	}
@@ -55,4 +58,18 @@ public class Board implements Comparable<Board> {
         }
         return 0;
 	}
+	
+	public String getSearchKey() {
+		return searchKey;
+	}
+	public void setSearchKey(String searchKey) {
+		this.searchKey = searchKey;
+	}
+	public String getSearchResult() {
+		return searchResult;
+	}
+	public void setSearchResult(String searchResult) {
+		this.searchResult = searchResult;
+	}
+
 }

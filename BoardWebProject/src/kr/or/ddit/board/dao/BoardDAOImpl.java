@@ -166,5 +166,22 @@ public class BoardDAOImpl implements IBoardDAO {
 		
 		return cnt;
 	}
+	
+	@Override
+	public List<Board> selectSearch(Board board) {
+		SqlSession session = null;
+		List<Board> searchlist = null;
+		
+		try {
+			session = MybatisUtil.getSqlSession();
+			searchlist = session.selectList("board.selectSearch", board);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if(session!=null) session.close();
+		}
+		
+		return searchlist;
+	}
 
 }

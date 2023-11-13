@@ -49,4 +49,9 @@ public class BoardServiceImpl implements IBoardService {
 	public int deleteBoard(int bo_no) {
 		return dao.deleteBoard(bo_no);
 	}
+	
+	@Override
+	public List<Board> selectSearch(Board board) {
+		return dao.selectSearch(board);
+	}
 }
